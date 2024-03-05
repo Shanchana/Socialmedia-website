@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<div class="main">
+<h1>Posts</h1>
+<a href="{% url 'create_post' %}">Create Post</a>
+
+{% for post in posts %}
+    <div>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        <p>Created at: {{ post.created_at }}</p>
+        <hr>
+    </div>
+{% empty %}
+    <p>No posts found.</p>
+{% endfor %}
+
+</div>
+
+<style>
+    a{
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+
+    body{
+        background: linear-gradient(150deg, #009FC2, #fefdfe);
+        font-family:'Courier New', Courier, monospace;
+        font-weight: bold;
+
+    }
+
+    .main{
+        align-items: center;
+        margin-top: 50px;
+        margin-left: 610px;
+    }
+    hr{
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        width: 40%;
+        margin-right: 680px;
+    }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create post</title>
+</head>
+
+<body>
+<div class="main">
+<h1>Create Post!</h1>
+
+<form method="post" action="{% url 'create_post' %}">
+    {% csrf_token %}
+    <label for="title">Title:</label><br>
+    <input type="text" placeholder="Title" id="title" name="title"><br><br>
+
+    <label for="content">Content:</label><br>
+    <textarea id="content" placeholder="Content" name="content"></textarea><br><br>
+
+    <input type="submit" class="button" value="Create">
+</form>
+</div>
+</body>
+<style>
+    input{
+        height: 32px;
+        border: 2px solid black;
+
+    }
+    textarea{
+        border: 2px solid black;
+        height: 60px;
+
+    }
+    .main{
+        align-items: center;
+        margin-top: 220px;
+        margin-left: 650px;
+    }
+.button{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+body{
+    background: linear-gradient(150deg, #009FC2, #fefdfe);
+    font-family:'Courier New', Courier, monospace;
+}
+
+label{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
+}
+</style>
+</html>
